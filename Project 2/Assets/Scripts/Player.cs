@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Hand rightHand;
 
+    [SerializeField]
+    private float rotationSpeed = 1.25f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +30,22 @@ public class Player : MonoBehaviour
     {
         // MOVEMENT CONTROLS
         // Get input from the left controller and translate it into a Vector3
-        Vector2 input = leftHand.GetMovementInput();
-        Vector3 inputDir = new Vector3(input.x, 0, input.y);
+        Vector2 moveInput = leftHand.GetJoystickInput();
+        Vector3 moveDir = new Vector3(moveInput.x, 0, moveInput.y);
 
         // Move in the direction of the controller input respective to where the player is facing.
-        Vector3 moveDir = head.TransformDirection(inputDir) * Time.deltaTime;
-        moveDir.y = 0;
+        Vector3 velocity = head.TransformDirection(moveDir) * Time.deltaTime;
+        velocity.y = 0;
 
         // Move the entire play space to move the player
-        playSpace.transform.Translate(moveDir, Space.World);
+        playSpace.transform.Translate(velocity, Space.World);
+
+        // ROTATION CONTROLS
+        // Get input from the right controller
+        Vector2 rotInput = rightHand.GetJoystickInput();
+        float rotDirection = rotInput.normalized.x;
+
+        // Add the input's x direction to the playSpace's rotation.
+        playSpace.Rotate(0, rotDirection * rotationSpeed, 0, Space.Self);
     }
 }

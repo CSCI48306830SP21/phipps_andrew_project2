@@ -4,8 +4,7 @@ using UnityEngine;
 using OVR;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Hand : MonoBehaviour
-{
+public class Hand : MonoBehaviour {
     [SerializeField]
     private Transform anchor;
 
@@ -26,13 +25,12 @@ public class Hand : MonoBehaviour
     private Rigidbody rb;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = Mathf.Infinity;
 
         // Determine which hand we are
-        if(side == HandSide.Left) {
+        if (side == HandSide.Left) {
             myHand = OVRInput.Controller.LTouch;
         }
         else {
@@ -41,12 +39,11 @@ public class Hand : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         // GRAB RELEASE CONTROLS
         float trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, myHand);
         // If we've release the trigger ad we're holding something, drop/release it.
-        if(trigger < gripAtPercent && grabbed != null) {
+        if (trigger < gripAtPercent && grabbed != null) {
             grabbed.Release();
             grabbed = null;
             StartCoroutine(ActivatedHandGraphics(0.5f)); // Delay reactivating the hand to prevent collision
@@ -78,7 +75,7 @@ public class Hand : MonoBehaviour
         if (grabbable == null) return;
 
         // If we're pulling the trigger and we don't have something grabbed already, pick up the object
-        if(trigger > gripAtPercent && grabbed == null) {
+        if (trigger > gripAtPercent && grabbed == null) {
             grabbed = grabbable;
             handGraphics.SetActive(false);
             grabbable.Grab(anchor);
@@ -100,7 +97,7 @@ public class Hand : MonoBehaviour
     /// Returns the input from the primary joystick of the controller controling the hand.
     /// </summary>
     /// <returns></returns>
-    public Vector2 GetMovementInput() {
+    public Vector2 GetJoystickInput() {
         return OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, myHand);
     }
 }

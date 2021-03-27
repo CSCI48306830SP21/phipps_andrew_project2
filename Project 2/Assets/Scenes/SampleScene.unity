@@ -610,6 +610,7 @@ MonoBehaviour:
   head: {fileID: 679106521}
   leftHand: {fileID: 398663070}
   rightHand: {fileID: 1912010606}
+  rotationSpeed: 1
 --- !u!4 &1425187521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a,
@@ -952,6 +953,11 @@ PrefabInstance:
       propertyPath: anchor
       value: 
       objectReference: {fileID: 1664206943}
+    - target: {fileID: 7098372970796267409, guid: f9933172570f9704f90cbc7520fc57d4,
+        type: 3}
+      propertyPath: toggleGrab
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7098372970796267413, guid: f9933172570f9704f90cbc7520fc57d4,
         type: 3}
       propertyPath: m_RootOrder
@@ -1062,12 +1068,12 @@ PrefabInstance:
     - target: {fileID: 3719204597071272225, guid: b3e28dc314e52f14c9b0eb7000c6b319,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.612
+      value: -1.577
       objectReference: {fileID: 0}
     - target: {fileID: 3719204597071272225, guid: b3e28dc314e52f14c9b0eb7000c6b319,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.018
+      value: 1.007
       objectReference: {fileID: 0}
     - target: {fileID: 3719204597071272225, guid: b3e28dc314e52f14c9b0eb7000c6b319,
         type: 3}
@@ -1266,6 +1272,11 @@ PrefabInstance:
       propertyPath: anchor
       value: 
       objectReference: {fileID: 1125831227}
+    - target: {fileID: 7098372970796267409, guid: f9933172570f9704f90cbc7520fc57d4,
+        type: 3}
+      propertyPath: toggleGrab
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7098372970796267413, guid: f9933172570f9704f90cbc7520fc57d4,
         type: 3}
       propertyPath: m_RootOrder
