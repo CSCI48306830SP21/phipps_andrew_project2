@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 7098372970796267408}
   m_Layer: 0
   m_Name: Left Hand
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 0}
-  side: 0
+  side: 1
   handGraphics: {fileID: 5982891493785002104}
   gripAtPercent: 0.5
 --- !u!54 &7098372970796267408

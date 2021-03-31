@@ -17,19 +17,19 @@ public class Grabble : MonoBehaviour
     protected Rigidbody rb;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = Mathf.Infinity;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
 
-    private void FixedUpdate() {
+    protected virtual void FixedUpdate() {
         if(anchor != null) {
             // FOLLOW ANCHOR POSITION AND ROTATION
             Vector3 pos = (useHandle) ? handlePos.position : rb.position; 
