@@ -48,6 +48,11 @@ public class Hand : MonoBehaviour {
             grabbed = null;
             StartCoroutine(ActivatedHandGraphics(0.5f)); // Delay reactivating the hand to prevent collision
         }
+
+        // Also check if the hand is in active, but we don't have something grabbed. This can happen when what we were holding was destroyed (i.e. destructible or consumable).
+        if(!handGraphics.activeSelf && grabbed == null) {
+            StartCoroutine(ActivatedHandGraphics(0.5f));
+        }
     }
 
     void FixedUpdate() {

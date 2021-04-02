@@ -28,6 +28,10 @@ public class Player : Entity
     // Update is called once per frame
     void Update()
     {
+        // Disable controls if dead
+        //if (IsDead)
+            //return;
+
         // MOVEMENT CONTROLS
         // Get input from the left controller and translate it into a Vector3
         Vector2 moveInput = leftHand.GetJoystickInput();
@@ -47,5 +51,11 @@ public class Player : Entity
 
         // Add the input's x direction to the playSpace's rotation.
         playSpace.Rotate(0, rotDirection * rotationSpeed, 0, Space.Self);
+    }
+
+    protected override void Die() {
+        base.Die();
+
+        // TODO: Add game over screen
     }
 }

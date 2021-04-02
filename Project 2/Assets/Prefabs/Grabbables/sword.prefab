@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4613064692695606238}
   - component: {fileID: 4910279697402276267}
   - component: {fileID: 4294771547775669848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2641122657878542070}
   - component: {fileID: 1805059337887903820}
   - component: {fileID: 8006681688443086410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pommel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 5713671303586875863}
   - component: {fileID: 8396694472542942821}
   - component: {fileID: 5077650204727319605}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 3611385624923055816}
   - component: {fileID: 1887551136762421581}
   - component: {fileID: 883028670333710362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

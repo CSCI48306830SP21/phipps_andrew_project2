@@ -36,7 +36,6 @@ public class Destructible : MonoBehaviour, IDamageable
     }
 
     public void TakeHit(int damage, Vector3 velocity) {
-        print("hit");
         // Disable physics on our self to avoid additional collision.
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;

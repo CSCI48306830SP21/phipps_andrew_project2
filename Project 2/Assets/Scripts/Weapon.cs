@@ -22,7 +22,13 @@ public class Weapon : Grabble
     }
 
     private void OnTriggerEnter(Collider col) {
+        // Ignore triggers and player
+        if (col.tag == "Trigger" || col.tag == "Player")
+            return;
+
         IDamageable damageable = col.GetComponent<IDamageable>();
+        if (damageable != null)
+            print(col.name);
 
         // Check if we hit a damageable, deal our damage.
         if(damageable != null) {

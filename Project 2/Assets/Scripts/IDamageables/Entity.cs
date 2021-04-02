@@ -9,10 +9,14 @@ public class Entity : MonoBehaviour, IDamageable
 
     private int health;
 
+    private bool isDead;
+    public bool IsDead => isDead;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         health = maxHealth;
+        isDead = false;
     }
 
     /// <summary>
@@ -32,9 +36,16 @@ public class Entity : MonoBehaviour, IDamageable
         // TODO: Do something with velocity
     }
 
+    /// <summary>
+    /// Adds health to the Entity's current health.
+    /// </summary>
+    /// <param name="health"></param>
+    public virtual void AddHealth(int health) {
+        this.health += health;
+        this.health = Mathf.Clamp(this.health, 0, maxHealth);
+    }
+
     protected virtual void Die() {
-        // TODO: Add behaviour for dying. This will typically be different for different Entities (enemies vs players) so the implementation here in the base class likely won't matter.
-        // Temporary Debugging.
-        Destroy(gameObject);
+        isDead = true;
     }
 }
