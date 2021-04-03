@@ -9,6 +9,9 @@ public class Weapon : Grabble
     [SerializeField]
     private int damage = 10;
 
+    [SerializeField]
+    private AudioClip hitSound;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -33,6 +36,9 @@ public class Weapon : Grabble
         // Check if we hit a damageable, deal our damage.
         if(damageable != null) {
             damageable.TakeHit(damage, rb.velocity);
+
+            if(hitSound != null)
+                AudioSource.PlayClipAtPoint(hitSound, transform.position);
         }
 
     }

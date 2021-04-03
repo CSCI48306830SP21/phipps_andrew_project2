@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class ConsumableEffect : ScriptableObject
 {
+    [SerializeField]
+    protected AudioClip consumeSound;
+    public AudioClip ConsumeSound => consumeSound;
+
     /// <summary>
     /// The effect the consumable has on the player.
     /// </summary>

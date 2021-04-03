@@ -27,6 +27,7 @@ public class Consumable : Grabble
     /// <param name="player"></param>
     public void Consume(Player player) {
         effect.Effect(player);
+        AudioSource.PlayClipAtPoint(effect.ConsumeSound, transform.position);
         Destroy(gameObject);
     }
 }

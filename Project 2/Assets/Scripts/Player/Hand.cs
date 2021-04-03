@@ -20,6 +20,12 @@ public class Hand : MonoBehaviour {
     [SerializeField]
     private float gripAtPercent = 0.50f;
 
+    [Tooltip("The maximum distance we can grab an object using raycasts.")]
+    [SerializeField]
+    private float maxGrabDistance = 5f;
+
+    private float trigger;
+
     private Grabble grabbed;
 
     private Rigidbody rb;
@@ -40,8 +46,22 @@ public class Hand : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        // Keep track of trigger position for grabbing/releasing.
+        trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, myHand);
+
+        // RAYCAST GRABBING CONTROLS
+        RaycastHit hit;
+        // If we're pointing at a grabbable object, aren't holding anything, and we've pulled the trigger attempt to grab the object.
+        if(trigger >= gripAtPercent && grabbed == null && Physics.Raycast(handGraphics.transform.position, handGraphics.transform.forward, out hit, maxGrabDistance)) {
+            Grabble g = hit.collider.GetComponentInParent<Grabble>();
+
+            // Make sure the object is grabbable from a distance. Objects like levers are not distance grabbale.
+            if(g != null && g.DistanceGrabbable) {
+                Grab(g);
+            }
+        }
+
         // GRAB RELEASE CONTROLS
-        float trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, myHand);
         // If we've release the trigger ad we're holding something, drop/release it.
         if (trigger < gripAtPercent && grabbed != null) {
             grabbed.Release();
@@ -70,7 +90,9 @@ public class Hand : MonoBehaviour {
 
     private void OnTriggerStay(Collider col) {
         // GRAB CONTROLS
-        float trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, myHand);
+        // If something is already grabbed, don't try to grab anything new.
+        if (grabbed != null)
+            return;
 
         // Check if the object we're trying to grab has a rigidbody / is a grabbable
         Rigidbody colRb = col.attachedRigidbody;
@@ -79,11 +101,20 @@ public class Hand : MonoBehaviour {
         Grabble grabbable = colRb.GetComponent<Grabble>();
         if (grabbable == null) return;
 
+        // Grab the object
+        Grab(grabbable);
+    }
+
+    /// <summary>
+    /// Attempts to grab the provided grabbable.
+    /// </summary>
+    /// <param name="grabObject"></param>
+    private void Grab(Grabble grabObject) {
         // If we're pulling the trigger and we don't have something grabbed already, pick up the object
-        if (trigger > gripAtPercent && grabbed == null) {
-            grabbed = grabbable;
+        if (trigger >= gripAtPercent && grabbed == null) {
+            grabbed = grabObject;
             handGraphics.SetActive(false);
-            grabbable.Grab(anchor);
+            grabObject.Grab(anchor);
         }
     }
 

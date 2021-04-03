@@ -11,6 +11,9 @@ public class Destructible : MonoBehaviour, IDamageable
     [SerializeField]
     private bool fragile;
 
+    [SerializeField]
+    private AudioClip breakSound;
+
     private bool weaponHit; // track if we've been hit with a weapon to avoid additional collisions
 
     private Rigidbody rb;
@@ -21,8 +24,10 @@ public class Destructible : MonoBehaviour, IDamageable
         // If the object is not grabbable, then don't bother checking if it's recieving damage from being dropped/thrown.
         if (!GetComponent<Grabble>())
             fragile = false;
-        else
-            rb = GetComponent<Rigidbody>(); // Grabbables are required to have rigidbodies attached.
+        else {
+            // Grabbables are required to have rigidbodies and audio sources attached.
+            rb = GetComponent<Rigidbody>(); 
+        }
     }
 
     // Update is called once per frame
@@ -49,6 +54,8 @@ public class Destructible : MonoBehaviour, IDamageable
             rb.AddForce(velocity);
         }
 
+        AudioSource.PlayClipAtPoint(breakSound, transform.position);
+
         Destroy(gameObject);
         Destroy(fractured, 2f);
     }
@@ -65,7 +72,7 @@ public class Destructible : MonoBehaviour, IDamageable
             return;
 
         // If set to fragile and we're falling and hit something, fracture the object. 
-        if (fragile && rb.velocity.magnitude >= 1f) {
+        if (fragile && rb != null && rb.velocity.magnitude >= 1f) {
             TakeHit(1, rb.velocity);
         }
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2445454005340571931}
   m_Layer: 10
   m_Name: Spike.010
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 9149811661214804120}
   m_Layer: 10
   m_Name: Spike.011
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 4225588741570109883}
   m_Layer: 10
   m_Name: Spike.004
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 3939669656034234146}
   m_Layer: 10
   m_Name: Spike.002
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 4592845796481744159}
   m_Layer: 10
   m_Name: Spike
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 330018992370073430}
   m_Layer: 10
   m_Name: Spike.006
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 2280559422505849627}
   m_Layer: 10
   m_Name: Spike.008
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 486947526025361100}
   m_Layer: 10
   m_Name: Spike.003
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 937986203978591041}
   m_Layer: 10
   m_Name: Spike.005
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 2642606553643011201}
   m_Layer: 10
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 7354641966394408642}
   m_Layer: 0
   m_Name: mace
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,9 +1015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993946ee6da11134eae0168969ba6706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bumpSound: {fileID: 0}
   useHandle: 1
   handlePos: {fileID: 2943949538323636021}
   damage: 15
+  hitSound: {fileID: 0}
 --- !u!135 &7354641966394408642
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1045,7 +1047,7 @@ GameObject:
   - component: {fileID: 5176923762290941282}
   m_Layer: 10
   m_Name: Spike.007
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1136,7 +1138,7 @@ GameObject:
   - component: {fileID: 2943949538323636021}
   m_Layer: 10
   m_Name: Grip
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1169,7 +1171,7 @@ GameObject:
   - component: {fileID: 4189824487095975970}
   m_Layer: 10
   m_Name: Spike.012
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1263,7 +1265,7 @@ GameObject:
   - component: {fileID: 4070769684813832767}
   m_Layer: 10
   m_Name: Spike.001
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1357,7 +1359,7 @@ GameObject:
   - component: {fileID: 6861390694028495812}
   m_Layer: 10
   m_Name: Handle
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1453,7 +1455,7 @@ GameObject:
   - component: {fileID: 4430047988416688556}
   m_Layer: 10
   m_Name: Spike.009
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,6 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Grabble : MonoBehaviour
 {
+    [Header("Grabbable Options")]
+    [Tooltip("If true, this grabbable can be grabbed from a distance via raycasting.")]
+    [SerializeField]
+    protected bool distanceGrabbable = true;
+    public bool DistanceGrabbable => distanceGrabbable;
+
+    [Tooltip("The sound the grabbable makes when bumping into things or when dropped.")]
+    [SerializeField]
+    private AudioClip bumpSound;
+
     [Tooltip("Set true if the grabbable should be held at a certain point (i.e. the grip of a gun or sword).")]
     [SerializeField]
     private bool useHandle;
@@ -44,6 +54,16 @@ public class Grabble : MonoBehaviour
             Vector3 anglularVelocity = axis * Mathf.Deg2Rad * angle;
             rb.angularVelocity = anglularVelocity / Time.deltaTime;
         }
+    }
+
+    private void OnCollisionEnter(Collision col) {
+        // Do not play sounds when interacting with players or weapons
+        if(col.collider.tag == "Player" || col.collider.tag == "Weapon")
+            return;
+
+        // When bumping into objects play our bumping sound where we collided.
+        if(bumpSound != null && Time.time > 1)
+            AudioSource.PlayClipAtPoint(bumpSound, col.contacts[0].point, rb.velocity.magnitude);
     }
 
     /// <summary>

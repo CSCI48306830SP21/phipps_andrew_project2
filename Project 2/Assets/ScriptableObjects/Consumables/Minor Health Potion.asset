@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a75b8bba67eda5438eeacd939c0cdd7, type: 3}
   m_Name: Minor Health Potion
   m_EditorClassIdentifier: 
+  consumeSound: {fileID: 8300000, guid: e7731fa8da9cc5f418b3ae4efcac76ab, type: 3}
   healAmount: 50

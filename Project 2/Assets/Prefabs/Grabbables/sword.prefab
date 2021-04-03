@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4294771547775669848}
   m_Layer: 10
   m_Name: Blade
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8006681688443086410}
   m_Layer: 10
   m_Name: Pommel
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 8812911691267650066}
   m_Layer: 0
   m_Name: sword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,9 +251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993946ee6da11134eae0168969ba6706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bumpSound: {fileID: 8300000, guid: c100bd8ac0debc94eb349d0d8c14261f, type: 3}
   useHandle: 1
   handlePos: {fileID: 1140475527341301394}
   damage: 10
+  hitSound: {fileID: 8300000, guid: 5479ee8835bb0aa46b60443e3fbb0f82, type: 3}
 --- !u!65 &8812911691267650066
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,7 +283,7 @@ GameObject:
   - component: {fileID: 5077650204727319605}
   m_Layer: 10
   m_Name: Guard
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +376,7 @@ GameObject:
   - component: {fileID: 883028670333710362}
   m_Layer: 10
   m_Name: Grip
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
