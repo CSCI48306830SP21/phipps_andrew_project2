@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5515901881387001616}
   - component: {fileID: 5515901881387001628}
   - component: {fileID: 5515901881387001617}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minor Health Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47d2b84bda43d44582c733a9f4fc2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceGrabbable: 1
+  bumpSound: {fileID: 0}
   useHandle: 0
   handlePos: {fileID: 0}
   effect: {fileID: 11400000, guid: deef23dd288fcd14398dd23116c6c65a, type: 2}

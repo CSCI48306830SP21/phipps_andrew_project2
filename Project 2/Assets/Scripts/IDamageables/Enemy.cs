@@ -25,6 +25,9 @@ public class Enemy : Entity
     [SerializeField]
     private CapsuleCollider bodyCollider;
 
+    [SerializeField]
+    private AudioClip attackSound;
+
     private NavMeshAgent agent;
 
     private Player target;
@@ -40,7 +43,7 @@ public class Enemy : Entity
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerStay(Collider col) {
@@ -54,9 +57,9 @@ public class Enemy : Entity
         // Get body offset
         Vector3 bodyOffset = new Vector3(transform.position.x, transform.position.y + bodyCollider.height, transform.position.z);
 
-        int layerMask = ~((1 << 8) | (1 << 9)); // Don't include Player/Entity layer
+        int layerMask = ~((1 << 8) | (1 << 9) | (1 << 10)); // Don't include Player/Entity/Ignore Entity layer
         // Check to see if a player has entered our "aggro" range. If they have check to see if they're in line of sight.
-        if (t != null && !Physics.Linecast(bodyOffset, t.transform.position, layerMask)) {
+        if (t != null && !Physics.Linecast(bodyOffset, t.Head.position, layerMask)) {
             target = t;
             StartCoroutine(Fight());
         }

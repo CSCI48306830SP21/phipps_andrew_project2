@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6256550076544815816}
   - component: {fileID: 6256550076544815817}
   - component: {fileID: 807323190576944889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Clay Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +114,9 @@ MonoBehaviour:
   fracturedPrefab: {fileID: 424120679326354731, guid: 36eaf16010224ea43990a5e484c711b5,
     type: 3}
   fragile: 1
+  fractureVelocity: 1.2
+  drop: {fileID: 5515901881387001617, guid: 2ff4c04be4a2a1244b81cd119d8958f4, type: 3}
+  dropChance: 0.1
   breakSound: {fileID: 8300000, guid: 8c3af526c11d58b46994d941449f1017, type: 3}
 --- !u!114 &6256550076544815817
 MonoBehaviour:
@@ -127,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c6bf515ffd5b442ada81b50ed44659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceGrabbable: 1
   bumpSound: {fileID: 8300000, guid: bad354214a43ae74f9af964507b13c2b, type: 3}
   useHandle: 0
   handlePos: {fileID: 0}

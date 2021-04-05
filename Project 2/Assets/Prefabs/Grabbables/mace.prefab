@@ -1015,11 +1015,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993946ee6da11134eae0168969ba6706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpSound: {fileID: 0}
+  distanceGrabbable: 1
+  bumpSound: {fileID: 8300000, guid: 8dd095f726441b147b11e8c67c449f82, type: 3}
   useHandle: 1
   handlePos: {fileID: 2943949538323636021}
   damage: 15
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 16b7e16105b5fa546a2070003568d9fb, type: 3}
 --- !u!135 &7354641966394408642
 SphereCollider:
   m_ObjectHideFlags: 0

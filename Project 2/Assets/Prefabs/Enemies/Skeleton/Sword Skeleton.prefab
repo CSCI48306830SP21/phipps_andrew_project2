@@ -974,7 +974,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3833225917168739248
 GameObject:
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 128827748747449325}
   - component: {fileID: 128827748747449323}
   m_Layer: 9
-  m_Name: Skeleton 1
+  m_Name: Sword Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1935,6 +1935,7 @@ MonoBehaviour:
   attackSpeed: 1
   damage: 20
   animator: {fileID: 1222471071773676271}
+  smoothTurn: 0.8
   bodyCollider: {fileID: 128827748747449324}
 --- !u!195 &128827748747449323
 NavMeshAgent:

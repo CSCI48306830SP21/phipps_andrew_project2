@@ -9,12 +9,16 @@ public class Player : Entity
 
     [SerializeField]
     private Transform head;
+    public Transform Head => head;
 
     [SerializeField]
     private Hand leftHand;
 
     [SerializeField]
     private Hand rightHand;
+
+    [SerializeField]
+    private float movementSpeed = 1f;
 
     [SerializeField]
     private float rotationSpeed = 1.25f;
@@ -38,7 +42,7 @@ public class Player : Entity
         Vector3 moveDir = new Vector3(moveInput.x, 0, moveInput.y);
 
         // Move in the direction of the controller input respective to where the player is facing.
-        Vector3 velocity = head.TransformDirection(moveDir) * Time.deltaTime;
+        Vector3 velocity = head.TransformDirection(moveDir) * movementSpeed * Time.deltaTime;
         velocity.y = 0;
 
         // Move the entire play space to move the player

@@ -11,6 +11,18 @@ public class Destructible : MonoBehaviour, IDamageable
     [SerializeField]
     private bool fragile;
 
+    [Tooltip("The velocity the object must meet in order to fracture if set to be fragile.")]
+    [SerializeField]
+    private float fractureVelocity = 1.5f;
+
+    [Tooltip("Potential item for the grabbale to drop when broken")]
+    [SerializeField]
+    private Grabble drop;
+
+    [Tooltip("The percent chance the droppable will actually have a drop.")]
+    [SerializeField]
+    private float dropChance = 0.10f;
+
     [SerializeField]
     private AudioClip breakSound;
 
@@ -51,10 +63,17 @@ public class Destructible : MonoBehaviour, IDamageable
 
         // For each fracture piece apply force to their rigidbody.
         foreach (Rigidbody rb in fractured.GetComponentsInChildren<Rigidbody>()) {
-            rb.AddForce(velocity);
+            Vector3 randomForce = new Vector3(Random.Range(50, 100), 0, Random.Range(50, 100)); // Add some random force to the fragments for a better fracture.
+            rb.AddForce(randomForce + velocity);
         }
 
+        // Play break sound
         AudioSource.PlayClipAtPoint(breakSound, transform.position);
+
+        // See if we dropped any loot
+        if(Random.value > (1 - dropChance)) {
+            Instantiate(drop, transform.position, transform.rotation);
+        }
 
         Destroy(gameObject);
         Destroy(fractured, 2f);
@@ -72,7 +91,7 @@ public class Destructible : MonoBehaviour, IDamageable
             return;
 
         // If set to fragile and we're falling and hit something, fracture the object. 
-        if (fragile && rb != null && rb.velocity.magnitude >= 1f) {
+        if (fragile && rb != null && rb.velocity.magnitude >= fractureVelocity) {
             TakeHit(1, rb.velocity);
         }
     }

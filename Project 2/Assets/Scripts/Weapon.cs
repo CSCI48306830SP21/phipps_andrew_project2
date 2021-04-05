@@ -30,8 +30,6 @@ public class Weapon : Grabble
             return;
 
         IDamageable damageable = col.GetComponent<IDamageable>();
-        if (damageable != null)
-            print(col.name);
 
         // Check if we hit a damageable, deal our damage.
         if(damageable != null) {
