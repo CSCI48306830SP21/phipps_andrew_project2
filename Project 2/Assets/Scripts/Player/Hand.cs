@@ -20,6 +20,10 @@ public class Hand : MonoBehaviour {
     [SerializeField]
     private float gripAtPercent = 0.50f;
 
+    [Tooltip("The percent the main trigger must be pressed down to release a grabbable object.")]
+    [SerializeField]
+    private float releaseAtPercent = 0.9f;
+
     [Tooltip("The maximum distance we can grab an object using raycasts.")]
     [SerializeField]
     private float maxGrabDistance = 5f;
@@ -85,7 +89,7 @@ public class Hand : MonoBehaviour {
 
         // GRAB RELEASE CONTROLS
         // If we've release the trigger ad we're holding something, drop/release it.
-        if (trigger < gripAtPercent && grabbed != null) {
+        if (trigger < releaseAtPercent && grabbed != null) {
             grabbed.Release();
             grabbed = null;
             StartCoroutine(ActivatedHandGraphics(0.5f)); // Delay reactivating the hand to prevent collision

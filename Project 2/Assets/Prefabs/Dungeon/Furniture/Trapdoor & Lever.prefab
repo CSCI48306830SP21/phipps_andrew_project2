@@ -247,6 +247,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2191707741256823996}
     m_Modifications:
+    - target: {fileID: 6076529819444062411, guid: 90d145c4ba937934d8450e773d45a640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7357765803492480698, guid: 90d145c4ba937934d8450e773d45a640,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -311,6 +316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016933724450179746, guid: 90d145c4ba937934d8450e773d45a640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90d145c4ba937934d8450e773d45a640, type: 3}

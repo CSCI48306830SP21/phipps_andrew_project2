@@ -63,8 +63,10 @@ public class Player : Entity
     void Update()
     {
         // Disable controls if dead
-        //if (IsDead)
-            //return;
+        if (IsDead) {
+            velocity = Vector3.zero;
+            return;
+        }
 
         // MOVEMENT CONTROLS
         // Get input from the left controller and translate it into a Vector3

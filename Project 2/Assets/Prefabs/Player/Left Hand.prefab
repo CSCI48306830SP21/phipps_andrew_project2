@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4458491265312614461}
   - component: {fileID: 305005291714583867}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Distance Trigger
   m_TagString: Player
   m_Icon: {fileID: 0}
