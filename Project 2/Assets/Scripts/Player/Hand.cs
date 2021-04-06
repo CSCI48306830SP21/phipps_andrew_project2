@@ -30,6 +30,8 @@ public class Hand : MonoBehaviour {
 
     private Rigidbody rb;
 
+    private WorldSpaceButton targetButton;
+
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody>();
@@ -49,8 +51,28 @@ public class Hand : MonoBehaviour {
         // Keep track of trigger position for grabbing/releasing.
         trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, myHand);
 
-        // RAYCAST GRABBING CONTROLS
         RaycastHit hit;
+        // RAYCAST UI BUTTON CONTROLS
+        // Pointing at button
+        if (Physics.Raycast(handGraphics.transform.position, handGraphics.transform.forward, out hit, maxGrabDistance)) {
+            WorldSpaceButton button = hit.collider.GetComponent<WorldSpaceButton>();
+
+            // If we have no button, save it and highlight it.
+            if(button != null && targetButton == null) {
+                targetButton = button;
+                //targetButton.Highlight();
+            }
+
+            // If we're not holding anyting and we've pulled the trigger over the button, click it.
+            if (button != null && grabbed == null && trigger >= gripAtPercent)
+                targetButton.Click();
+        }
+        // No longer pointing at button.
+        else {
+            targetButton = null;
+        }
+
+        // RAYCAST GRABBING CONTROLS
         // If we're pointing at a grabbable object, aren't holding anything, and we've pulled the trigger attempt to grab the object.
         if(trigger >= gripAtPercent && grabbed == null && Physics.Raycast(handGraphics.transform.position, handGraphics.transform.forward, out hit, maxGrabDistance)) {
             Grabble g = hit.collider.GetComponentInParent<Grabble>();

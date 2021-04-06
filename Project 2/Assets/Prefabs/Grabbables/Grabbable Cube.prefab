@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6805025512726669979}
   - component: {fileID: 6805025512726669978}
   - component: {fileID: 6805025512726669981}
-  - component: {fileID: 1215686858632954646}
   m_Layer: 10
   m_Name: Grabbable Cube
   m_TagString: Untagged
@@ -111,19 +110,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1215686858632954646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6805025512726669980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c6bf515ffd5b442ada81b50ed44659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceGrabbable: 1
-  bumpSound: {fileID: 0}
-  useHandle: 0
-  handlePos: {fileID: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(AudioSource))]
 public class Enemy : Entity
 {
     [SerializeField]
@@ -26,11 +27,16 @@ public class Enemy : Entity
     private CapsuleCollider bodyCollider;
 
     [SerializeField]
-    private AudioClip attackSound;
+    private AudioClip aggroSound;
+
+    [SerializeField]
+    private AudioClip deathSound;
 
     private NavMeshAgent agent;
 
     private Player target;
+
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -38,6 +44,7 @@ public class Enemy : Entity
         base.Start();
 
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,9 +66,13 @@ public class Enemy : Entity
 
         int layerMask = ~((1 << 8) | (1 << 9) | (1 << 10)); // Don't include Player/Entity/Ignore Entity layer
         // Check to see if a player has entered our "aggro" range. If they have check to see if they're in line of sight.
-        if (t != null && !Physics.Linecast(bodyOffset, t.Head.position, layerMask)) {
+        if (t != null && !t.IsDead && !Physics.Linecast(bodyOffset, t.Head.position, layerMask)) {
             target = t;
             StartCoroutine(Fight());
+
+            // Play aggro sound
+            if (aggroSound != null && !audioSource.isPlaying)
+                audioSource.PlayOneShot(aggroSound);
         }
     }
 
@@ -147,6 +158,8 @@ public class Enemy : Entity
 
     protected override void Die() {
         base.Die();
+
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
 
         // TODO: Do implement death behaviour for enemies.
         Destroy(gameObject);

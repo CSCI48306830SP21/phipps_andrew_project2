@@ -25,5 +25,5 @@ public class DungeonFloorData : ScriptableObject
 
     [SerializeField]
     private DungeonRoom endRoomPrefab;
-    public DungeonRoom EndRoomPrefab => EndRoomPrefab;
+    public DungeonRoom EndRoomPrefab => endRoomPrefab;
 }

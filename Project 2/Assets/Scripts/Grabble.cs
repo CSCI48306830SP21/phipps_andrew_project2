@@ -17,11 +17,11 @@ public class Grabble : MonoBehaviour
 
     [Tooltip("Set true if the grabbable should be held at a certain point (i.e. the grip of a gun or sword).")]
     [SerializeField]
-    private bool useHandle;
+    protected bool useHandle;
 
     [Tooltip("The position the grabble will be held at if useHandle is set to true.")]
     [SerializeField]
-    private Transform handlePos;
+    protected Transform handlePos;
 
     protected Transform anchor;
     protected Rigidbody rb;

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3c3c7d20200a64d96beeab2f8c0391, type: 3}
+  m_Name: Medium
+  m_EditorClassIdentifier: 
+  roomsMinMax: {x: 5, y: 6}
+  roomSize: {x: 10, y: 10}
+  roomPrefab: {fileID: 5323811687859706314, guid: efc837fe82a577f4780a8a315abb897f,
+    type: 3}
+  startRoomPrefab: {fileID: 7360290368486367326, guid: 765ae690848b531479679c6e96002cc0,
+    type: 3}
+  endRoomPrefab: {fileID: 2270900700380522729, guid: a81afd0d64dc6574fb46df493096ec90,
+    type: 3}

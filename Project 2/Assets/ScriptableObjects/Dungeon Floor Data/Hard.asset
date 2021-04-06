@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3c3c7d20200a64d96beeab2f8c0391, type: 3}
+  m_Name: Hard
+  m_EditorClassIdentifier: 
+  roomsMinMax: {x: 6, y: 8}
+  roomSize: {x: 10, y: 10}
+  roomPrefab: {fileID: 3255275881950876391, guid: e4b45cb4785f6da4883768f9be46f4fc,
+    type: 3}
+  startRoomPrefab: {fileID: 8938945419698763639, guid: 3f9904ed3ef78714f880b8456bcac1bd,
+    type: 3}
+  endRoomPrefab: {fileID: 7333021840162833046, guid: 9b1f11749c7dd0a4eb783cef7670b816,
+    type: 3}

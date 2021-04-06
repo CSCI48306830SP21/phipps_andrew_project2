@@ -6,8 +6,10 @@ public class Entity : MonoBehaviour, IDamageable
 {
     [SerializeField]
     private int maxHealth;
+    public int MaxHealth => maxHealth;
 
     private int health;
+    public int Health => health;
 
     private bool isDead;
     public bool IsDead => isDead;

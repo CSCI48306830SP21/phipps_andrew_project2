@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour
 {
-    [SerializeField]
-    private DungeonFloorData data;
-
     private int[,] rooms;
+
+    private List<Vector2Int> usedRooms;
 
     private int roomCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GenerateFloor(data));
+
     }
 
     // Update is called once per frame
@@ -24,9 +23,8 @@ public class DungeonGenerator : MonoBehaviour
     }
 
     public IEnumerator GenerateFloor(DungeonFloorData data) {
-        print("Generating");
-
         roomCount = Random.Range(data.RoomsMinMax.x, data.RoomsMinMax.y);
+        usedRooms = new List<Vector2Int>();
 
         // Rooms are stored in grid
         rooms = new int[roomCount * 2, roomCount * 2];
@@ -36,6 +34,7 @@ public class DungeonGenerator : MonoBehaviour
 
         // Generate room map from center out
         Vector2Int currentPos = new Vector2Int(roomCount, roomCount);
+        usedRooms.Add(currentPos);
         for (int i = 0; i < roomCount; i++) {
             // Choose a random room. 0 = north, 1 = east, 2 = south, 3 = west
             int nextRoom = Random.Range(0, 3);
@@ -49,6 +48,7 @@ public class DungeonGenerator : MonoBehaviour
             // Assign the current room to the map.
             currentPos = NewRoomCoord(currentPos.x, currentPos.y, nextRoom);
             rooms[currentPos.x, currentPos.y] = 1;
+            usedRooms.Add(currentPos);
         }
 
         print("Done mapping");
@@ -59,34 +59,38 @@ public class DungeonGenerator : MonoBehaviour
         print("Building");
 
         // Instantiate room prefabs using the rooms map
-        for(int row = 0; row < rooms.GetLength(0); row++) {
-            for(int col = 0; col < rooms.GetLength(1); col++) {
-                if(rooms[row, col] == 1) {
-                    Vector3 roomPosition = new Vector3(row * data.RoomSize.x, 0, col * data.RoomSize.y);
-                    DungeonRoom room;
+        for(int i = 0; i < usedRooms.Count; i++) {
+            Vector2Int r = usedRooms[i];
+            int row = r.x;
+            int col = r.y;
 
-                    // Spawn the spawn room in separately
-                    if (row == roomCount && col == roomCount) {
-                        room = Instantiate(data.StartRoomPrefab, roomPosition, transform.rotation);
-                    }
-                    // Instantiate room
-                    else {
-                        room = Instantiate(data.RoomPrefab, roomPosition, transform.rotation);
-                        room.name = "Room (" + row + ", " + col + ")";
-                    }
+            Vector3 roomPosition = new Vector3(row * data.RoomSize.x, 0, col * data.RoomSize.y);
+            DungeonRoom room;
 
-                    // Toggle doors based on the room's neighbors.
-                    if (GetNeighbor(row, col, 0))
-                        room.ToggleDoor(DungeonRoom.DoorDirection.North);
-                    if (GetNeighbor(row, col, 1))
-                        room.ToggleDoor(DungeonRoom.DoorDirection.East);
-                    if (GetNeighbor(row, col, 2))
-                        room.ToggleDoor(DungeonRoom.DoorDirection.South);
-                    if (GetNeighbor(row, col, 3))
-                        room.ToggleDoor(DungeonRoom.DoorDirection.West);
-                }
-                yield return null;
+            // Spawn the spawn room in separately
+            if (i == 0) {
+                room = Instantiate(data.StartRoomPrefab, roomPosition, transform.rotation);
             }
+            // Spawn end room in the last room generated
+            else if(i == usedRooms.Count - 1) {
+                room = Instantiate(data.EndRoomPrefab, roomPosition, transform.rotation);
+            }
+            // Instantiate room
+            else {
+                room = Instantiate(data.RoomPrefab, roomPosition, transform.rotation);
+                room.name = "Room (" + row + ", " + col + ")";
+            }
+
+            // Toggle doors based on the room's neighbors.
+            if (GetNeighbor(row, col, 0))
+                room.ToggleDoor(DungeonRoom.DoorDirection.North);
+            if (GetNeighbor(row, col, 1))
+                room.ToggleDoor(DungeonRoom.DoorDirection.East);
+            if (GetNeighbor(row, col, 2))
+                room.ToggleDoor(DungeonRoom.DoorDirection.South);
+            if (GetNeighbor(row, col, 3))
+                room.ToggleDoor(DungeonRoom.DoorDirection.West);
+            yield return null;
         }
     }
 

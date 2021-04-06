@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3c3c7d20200a64d96beeab2f8c0391, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: 
-  roomsMinMax: {x: 3, y: 5}
+  roomsMinMax: {x: 4, y: 5}
   roomSize: {x: 10, y: 10}
   roomPrefab: {fileID: 6043761118154147145, guid: 81325d24277f8fd4bb3161b1b85c4c55,
     type: 3}
   startRoomPrefab: {fileID: 6041953987362935552, guid: c07b2e38cbec4bb4bb1789efd803fab4,
     type: 3}
-  endRoomPrefab: {fileID: 0}
+  endRoomPrefab: {fileID: 6041953987362935552, guid: e51ddf95ae79fd748b61c7f03a688c38,
+    type: 3}
