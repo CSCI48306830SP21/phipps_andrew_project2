@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuButton: 0
+  quitButton: 1
 --- !u!1 &3183954382104664948
 GameObject:
   m_ObjectHideFlags: 0

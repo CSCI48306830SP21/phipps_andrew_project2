@@ -10,6 +10,9 @@ public class WorldSpaceButton : MonoBehaviour
     [SerializeField]
     private bool mainMenuButton = false;
 
+    [SerializeField]
+    private bool quitButton = false;
+
     private Button button;
 
     // Start is called before the first frame update
@@ -22,6 +25,11 @@ public class WorldSpaceButton : MonoBehaviour
             GameManager gm = FindObjectOfType<GameManager>();
 
             button.onClick.AddListener(delegate { gm.LoadMainMenuScene(); });
+        }
+        else if (quitButton) {
+            GameManager gm = FindObjectOfType<GameManager>();
+
+            button.onClick.AddListener(delegate { gm.Quit(); });
         }
     }
 
