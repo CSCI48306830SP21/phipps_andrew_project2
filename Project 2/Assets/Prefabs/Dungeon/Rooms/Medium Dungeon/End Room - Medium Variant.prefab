@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ac7554b07e169ec43a4145b3e34de69f, type: 2}
+    - target: {fileID: 3183954382104664948, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3780921100013834292, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: m_RootOrder
@@ -77,10 +82,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3798508369300456918, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874536556423003761, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4554079416454138510, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: m_Name
-      value: End Room - Medium
+      value: End Room - Medium Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373031891327027412, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6411503996922754909, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
@@ -97,6 +117,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 05aeea0a02d4f47429882b522c373676, type: 2}
+    - target: {fileID: 7866007056166805699, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: a98db05b487017245a3d8e184ed3afb3,
+        type: 2}
     - target: {fileID: 9085428123936993033, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

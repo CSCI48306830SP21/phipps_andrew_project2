@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0.3759048
       objectReference: {fileID: 0}
+    - target: {fileID: 3183954382104664948, guid: c07b2e38cbec4bb4bb1789efd803fab4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3780921100013834292, guid: c07b2e38cbec4bb4bb1789efd803fab4,
         type: 3}
       propertyPath: m_RootOrder
@@ -122,12 +127,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3798508369300456918, guid: c07b2e38cbec4bb4bb1789efd803fab4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874536556423003761, guid: c07b2e38cbec4bb4bb1789efd803fab4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4554079416454138510, guid: c07b2e38cbec4bb4bb1789efd803fab4,
         type: 3}
       propertyPath: m_Name
-      value: Spawn Room
+      value: Spawn Room Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4554079416454138510, guid: c07b2e38cbec4bb4bb1789efd803fab4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373031891327027412, guid: c07b2e38cbec4bb4bb1789efd803fab4,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -197,6 +217,12 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key2.r
       value: 0.039215688
       objectReference: {fileID: 0}
+    - target: {fileID: 8459176393784889232, guid: c07b2e38cbec4bb4bb1789efd803fab4,
+        type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 82e567ca54f6aed40906eb774df8203a,
+        type: 2}
     - target: {fileID: 9085428123936993033, guid: c07b2e38cbec4bb4bb1789efd803fab4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

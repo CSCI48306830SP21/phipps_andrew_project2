@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ac7554b07e169ec43a4145b3e34de69f, type: 2}
+    - target: {fileID: 3182136394055486781, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3782480672782419581, guid: 81325d24277f8fd4bb3161b1b85c4c55,
         type: 3}
       propertyPath: m_RootOrder
@@ -77,11 +82,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3796981611168273311, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874093953388849208, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4554760510012808391, guid: 81325d24277f8fd4bb3161b1b85c4c55,
         type: 3}
       propertyPath: m_Name
       value: Dungeon Room Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5374568543453191837, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478636277603959131, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: da7d5d1250171784f852bf14c4fe5128,
+        type: 2}
     - target: {fileID: 6043761118154147145, guid: 81325d24277f8fd4bb3161b1b85c4c55,
         type: 3}
       propertyPath: enemies.Array.data[0]

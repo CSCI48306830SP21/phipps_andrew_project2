@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key2.r
       value: 0.039215688
       objectReference: {fileID: 0}
+    - target: {fileID: 3182136394055486781, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3782480672782419581, guid: 81325d24277f8fd4bb3161b1b85c4c55,
         type: 3}
       propertyPath: m_RootOrder
@@ -122,6 +127,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3796981611168273311, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874093953388849208, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4554760510012808391, guid: 81325d24277f8fd4bb3161b1b85c4c55,
         type: 3}
       propertyPath: m_Name
@@ -157,6 +172,17 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0.3759048
       objectReference: {fileID: 0}
+    - target: {fileID: 5374568543453191837, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478636277603959131, guid: 81325d24277f8fd4bb3161b1b85c4c55,
+        type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 37224175657543746bf1f79c82ce5c89,
+        type: 2}
     - target: {fileID: 6043761118154147145, guid: 81325d24277f8fd4bb3161b1b85c4c55,
         type: 3}
       propertyPath: clutter.Array.data[7]

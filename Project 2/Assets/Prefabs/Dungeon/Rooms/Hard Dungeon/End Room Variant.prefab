@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0.3759048
       objectReference: {fileID: 0}
+    - target: {fileID: 3183954382104664948, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3780921100013834292, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: m_RootOrder
@@ -122,12 +127,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3798508369300456918, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874536556423003761, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4554079416454138510, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: m_Name
-      value: End Room
+      value: End Room Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4554079416454138510, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373031891327027412, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -147,6 +167,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 8d1c60a7875db77469c371de7b7e3b7b, type: 2}
+    - target: {fileID: 7866007056166805699, guid: e51ddf95ae79fd748b61c7f03a688c38,
+        type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 43465f9bae43e2e47849268fd1e46976,
+        type: 2}
     - target: {fileID: 8191766955888299694, guid: e51ddf95ae79fd748b61c7f03a688c38,
         type: 3}
       propertyPath: LightsModule.light

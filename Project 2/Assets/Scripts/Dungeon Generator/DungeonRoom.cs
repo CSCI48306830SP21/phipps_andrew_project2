@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using NavMeshBuilder = UnityEngine.AI.NavMeshBuilder;
 
 public class DungeonRoom : MonoBehaviour
 {
@@ -28,9 +29,14 @@ public class DungeonRoom : MonoBehaviour
     [SerializeField]
     private Transform[] enemySpawnPoints;
 
+    [SerializeField]
+    private NavMeshSurface surface;
+
     // Start is called before the first frame update
     void Start()
     {
+        //surface.BuildNavMesh();
+
         // Fill the room with enemies/clutter.
         StartCoroutine(PopulateRoom());
     }
